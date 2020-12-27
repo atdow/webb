@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require("./common.js");
+const path = require('path');
 
-module.exports = merge(common,{
+module.exports = merge(common, {
   mode: 'development',
   output: {
     filename: 'main.js',
@@ -33,8 +34,8 @@ module.exports = merge(common,{
           'style-loader',
           'css-loader',
           {
-            loader:"less-loader",
-            options:{
+            loader: "less-loader",
+            options: {
               javascriptEnabled: true
             }
           }
@@ -42,7 +43,13 @@ module.exports = merge(common,{
       },
     ]
   },
-  plugins:[
+  // resolve: {
+  //   extensions: ['.ts', '.tsx', '.js', 'config.js', '.json', '.jpg', '.png'],
+  //   alias: {
+  //     '@': path.resolve(__dirname, './src'),
+  //   }
+  // },
+  plugins: [
     new webpack.HotModuleReplacementPlugin()
   ]
 });

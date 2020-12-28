@@ -3,6 +3,8 @@ import './index.less';
 import { Menu, Dropdown, Button } from 'antd';
 import bigPiture from 'assets/header/menu/game/big.jpg';
 import smallPiture from 'assets/header/menu/game/small.jpg';
+import previewItem1 from 'assets/header/menu/game/previewItem1.png';
+import previewItem2 from 'assets/header/menu/game/previewItem2.png';
 
 interface IMenuProps { };
 
@@ -30,6 +32,41 @@ const menu: any = (
                     </ul>
                 </div>
             </div>
+            <div className='preview'>
+                <ul>
+                    <li>
+                        <span>影之刃3</span>
+                        <img src={previewItem1} alt="" />
+                    </li>
+                    <li>
+                        <span>天谕</span>
+                        <img src={previewItem2} alt="" />
+                    </li>
+                    <li>
+                        <span>代号：Project Doll</span>
+                        <img src={previewItem1} alt="" />
+                    </li>
+                    <li>
+                        <span>诺弗兰物语</span>
+                        <img src={previewItem2} alt="" />
+                    </li>
+                    <li>
+                        <span>银河境界线</span>
+                        <img src={previewItem1} alt="" />
+                    </li>
+                    <li>
+                        <span>狩猎时刻</span>
+                        <img src={previewItem2} alt="" />
+                    </li>
+                    <li>
+                        <span>摩尔庄园</span>
+                        <img src={previewItem1} alt="" />
+                    </li>
+                </ul>
+                {/* <div className="preview-item">
+                    <img src={previewItem1} alt="" />
+                </div> */}
+            </div>
         </div>
     </Menu>
 );
@@ -55,7 +92,7 @@ const FrameEditor: React.FC<IMenuProps> = (props: IMenuProps) => {
             <ul className="menu-wrap">
                 <li className="menu-item">主站</li>
                 <li className="menu-item">番剧</li>
-                <Dropdown overlay={menu} placement="bottomLeft" visible={true} arrow={true} className="menu-item">
+                <Dropdown overlay={menu} placement="bottomLeft" arrow={true} className="menu-item">
                     {/* <Button>bottomCenter</Button> */}
                     <span>游戏中心</span>
                 </Dropdown>

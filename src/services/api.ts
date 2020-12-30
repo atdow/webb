@@ -13,3 +13,7 @@ export async function getUserInfo(islogin: boolean) {
 export async function login(params: ILogin) {
   return http.post("/api/login");
 }
+
+export async function testapi(params?: any) {
+  return http.get("/test/api");
+}

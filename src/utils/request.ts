@@ -44,7 +44,6 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response): any => {
     const { status, data, statusText } = response;
-
     if (status !== 200) {
       // 50008:非法的token; 50012:其他客户端登录了;  50014:Token 过期了;
       if (status === 50008 || status === 50012 || status === 50014) {
@@ -70,9 +69,11 @@ service.interceptors.response.use(
       });
       return Promise.reject(response);
     } else {
-      if (data && data.code === 0) {
+      // 这里应该修改成200
+      if (data && data.code === 200) {
         return Promise.resolve(response);
       } else {
+        debugger
         message.error(data.message);
         return Promise.reject(response);
       }

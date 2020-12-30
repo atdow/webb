@@ -12,7 +12,7 @@ import "src/styles/index";
 import { getToken, getStore } from "utils/auth";
 import App from "./App";
 
-import "./mock"
+import "./mock";
 
 NProgress.configure({ showSpinner: false });
 NProgress.start();

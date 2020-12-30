@@ -5,6 +5,7 @@ import bigPiture from 'assets/header/menu/game/big.jpg';
 import smallPiture from 'assets/header/menu/game/small.jpg';
 import previewItem1 from 'assets/header/menu/game/previewItem1.png';
 import previewItem2 from 'assets/header/menu/game/previewItem2.png';
+import { testapi } from 'src/services/api';
 
 interface IMenuProps { };
 
@@ -81,11 +82,14 @@ const FrameEditor: React.FC<IMenuProps> = (props: IMenuProps) => {
 
     // const pixiFrameEditor = useRef<PixiFrameEditor | null>(null);
 
-    // component did mount
     useEffect(() => {
+        testapi().then(res => {
+            console.log("res:", res)
+        })
         return () => {
         };
     }, []);
+
 
     return (
         <div className='menu'>
